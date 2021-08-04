@@ -1,13 +1,35 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {createGlobalStyle} from 'styled-components';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
+import { MainContent } from './components/MainContent';
 
-const Container = styled.div`
+ 
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f7f8fb;
+    color: rgba(0,0,0,.65);
+    font-family: Open-Sans, Helvetica, Sans-Serif;
+  }
+`;
+
+
+const AppSection = styled.div`
   background-color: transparent
 `;
 
 const App = () => {
   return (
-    <Container><h1>Please get a cup of coffee while we finish deploying the site here...</h1></Container>
+    <>
+      <GlobalStyle />
+      <AppSection>
+        <Header />
+        <MainContent />
+        <Footer />
+      </AppSection>
+    </>
   );
 }
 
