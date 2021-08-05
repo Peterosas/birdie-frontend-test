@@ -54,7 +54,7 @@ const Header = () => {
       </LogoSection>
       <SearchBox placeholder="Filter Search..." />
       <ButtonGroupSection>
-        <ButtonGroup buttons={["Timeline", "Table", "Graphical"]} activeId={0} onChange={ handlePageChange } />
+        <ButtonGroup buttons={["Timeline", "Table", "Graphical"]} activeId={1} onChange={ handlePageChange } />
       </ButtonGroupSection>
     </HeaderSection>
   );
