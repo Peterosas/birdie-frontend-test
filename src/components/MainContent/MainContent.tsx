@@ -19,8 +19,8 @@ const MainContent = () => {
     <MainContentSection>
       {activeId === 0 && <Timeline />}
       {activeId === 1 && <Table 
-        headers={["Patient ID", "Patient Name", "Care Giver Id"]} 
-        data={["Patient ID", "Patient Name", "Care Giver Id"]} 
+        headers={["Patient ID", "Event Type", "Patient Mood", "Care Giver Id", "Date"]} 
+        data={["Patient ID", "Event Type", "Patient Mood", "Care Giver Id", "Date"]} 
       />}
     </MainContentSection>
   );

@@ -21,6 +21,10 @@ const GlobalStyle = createGlobalStyle`
     position: fixed;
   }
 
+  ._loading_overlay_spinner {
+    color: #54c6c1;
+  }
+
   button.active {
     background-color: #54c6c1;
     color: #fff;
