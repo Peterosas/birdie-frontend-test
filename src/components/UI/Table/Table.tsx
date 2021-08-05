@@ -47,7 +47,7 @@ const Table = ({headers, data} : IHeaderProps) => {
       <TableHeaderSection>
         <TableRow>
           {headers?.map(item => (
-              <TableHeading>
+              <TableHeading key={item}>
                 {item}
               </TableHeading>
           ))}
@@ -57,7 +57,7 @@ const Table = ({headers, data} : IHeaderProps) => {
       <TableBodySection>
         <TableRow>
           {data?.map(item => (
-              <TableData>
+              <TableData key={item}>
                 {item}
               </TableData>
           ))}

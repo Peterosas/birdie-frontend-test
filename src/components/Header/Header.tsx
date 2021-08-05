@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Logo from '../../assets/images/logo.svg';
-import { RootState } from '../../redux/reducers';
 import { ButtonGroup } from '../UI/ButtonGroup';
 
 const HeaderSection = styled.div`
@@ -61,10 +60,8 @@ const Header = () => {
 }
 
 
-const mapStateToProps = (state: RootState) => {
-  return ({
-      pageActive: state?.pageActive
-  });
+const mapStateToProps = (state: {}) => {
+  return state;
 }
 
 export default connect(mapStateToProps)(Header);

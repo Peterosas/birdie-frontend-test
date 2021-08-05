@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, {createGlobalStyle} from 'styled-components';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { MainContent } from './components/MainContent';
 
 import LoadingOverlay from 'react-loading-overlay-ts';
+import { getAllPatients } from './redux/actions/patient.actions';
 
  
 const GlobalStyle = createGlobalStyle`
@@ -41,6 +42,13 @@ const AppSection = styled.div`
 
 const App = () => {
   const [isLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+      (async () => {
+        await getAllPatients();
+      })();
+
+  }, []);
 
   return (
     <>
