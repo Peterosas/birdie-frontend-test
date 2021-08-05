@@ -1,13 +1,69 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
-  background-color: red
+const TableSection = styled.table`
+  border-collapse: collapse;
+  width: 100%;
 `;
 
-const Table = () => {
+const TableHeaderSection = styled.thead`
+  
+`;
+
+const TableHeading = styled.th`
+  padding: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #87a0bb;
+  color: #fff;
+  :first-child {
+    border-top-left-radius: 8px;
+  }
+  :last-child {
+    border-top-right-radius: 8px;
+  }
+`;
+
+const TableBodySection = styled.tbody`
+  background: #fff;
+`;
+
+const TableRow = styled.tr`
+  :hover {background-color: #fff;};
+`;
+
+const TableData = styled.td`
+  padding: 8px;
+`;
+
+interface IHeaderProps {
+  headers?: string[];
+  data?: string[];
+}
+const Table = ({headers, data} : IHeaderProps) => {
   return (
-    <Container><h1>Table</h1></Container>
+    <TableSection>
+      <TableHeaderSection>
+        <TableRow>
+          {headers?.map(item => (
+              <TableHeading>
+                {item}
+              </TableHeading>
+          ))}
+        </TableRow>
+      </TableHeaderSection>
+
+      <TableBodySection>
+        <TableRow>
+          {data?.map(item => (
+              <TableData>
+                {item}
+              </TableData>
+          ))}
+        </TableRow>
+      </TableBodySection>
+    </TableSection>
   );
 }
 

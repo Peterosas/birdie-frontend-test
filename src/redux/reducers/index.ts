@@ -2,7 +2,11 @@
 
 import { combineReducers } from 'redux';
 
-const appReducer = combineReducers({});
+export type RootState = Readonly<{
+  pageActive?: number;
+}>;
+
+const appReducer = combineReducers<RootState>({});
 
 const rootReducer = (state: any, action: any) => {
     if (action.type === 'RESET_APP') {

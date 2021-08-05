@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Logo from '../../assets/images/logo.svg';
+import { RootState } from '../../redux/reducers';
 import { ButtonGroup } from '../UI/ButtonGroup';
 
 const HeaderSection = styled.div`
@@ -41,6 +43,10 @@ const LogoImage = styled.img`
 
 
 const Header = () => {
+  const handlePageChange = (activeId: number) => {
+    alert(activeId);
+  }
+
   return (
     <HeaderSection>
       <LogoSection>
@@ -48,10 +54,18 @@ const Header = () => {
       </LogoSection>
       <SearchBox placeholder="Filter Search..." />
       <ButtonGroupSection>
-        <ButtonGroup buttons={["Timeline", "Table", "Graphical"]} />
+        <ButtonGroup buttons={["Timeline", "Table", "Graphical"]} activeId={0} onChange={ handlePageChange } />
       </ButtonGroupSection>
     </HeaderSection>
   );
 }
 
-export default Header;
+
+const mapStateToProps = (state: RootState) => {
+  return ({
+      pageActive: state?.pageActive
+  });
+}
+
+export default connect(mapStateToProps)(Header);
+

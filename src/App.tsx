@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background: rgba(88, 166, 162, 0.1);
+    background: #eefcfc;
     color: rgba(0,0,0,.65);
     font-family: Open-Sans, Helvetica, Sans-Serif;
     font-size: 14px;
@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   button.active {
-    background-color: #00adb1;
+    background-color: #54c6c1;
     color: #fff;
     border-radius: 4px;
   }
@@ -36,7 +36,7 @@ const AppSection = styled.div`
 `;
 
 const App = () => {
-  const [isLoading] = useState<boolean>(false);
+  const [isLoading] = useState<boolean>(true);
 
   return (
     <>

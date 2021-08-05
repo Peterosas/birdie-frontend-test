@@ -18,14 +18,19 @@ const Button = styled.button`
     cursor: pointer;
 `;
 
-const ButtonGroup = ({ buttons, activeId } : {buttons: string[], activeId?: number}) => {
+const ButtonGroup = ({ buttons, activeId, onChange } : {buttons: string[], activeId?: number, onChange?: (e: number) => void}) => {
     const [activeButtonId, setActiveButtonId] = useState<number>(activeId?? 0);
+
+    const handleClick = (i: number) => {
+        setActiveButtonId(i);
+        onChange?.(i);
+    }
     return(
         <ButtonGroupSection>
             {buttons.map((buttonLabel, i) => (
                 <Button key={i} 
                     name={buttonLabel} 
-                    onClick={() => setActiveButtonId(i)}
+                    onClick={() => handleClick(i)}
                     className={i === activeButtonId ? "active" : ""}
                 >
                     {buttonLabel}
