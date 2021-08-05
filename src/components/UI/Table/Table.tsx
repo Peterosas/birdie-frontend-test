@@ -35,6 +35,7 @@ const TableRow = styled.tr`
 
 const TableData = styled.td`
   padding: 8px;
+  text-align: left;
 `;
 
 interface IHeaderProps {
