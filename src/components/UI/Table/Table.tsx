@@ -40,7 +40,7 @@ const TableData = styled.td`
 
 interface IHeaderProps {
   headers?: string[];
-  data?: string[];
+  data?: {care_recipient_id: string, event_type: string, caregiver_id: string, mood: string, timestamp: string}[] | null;
 }
 const Table = ({headers, data} : IHeaderProps) => {
   return (
@@ -56,13 +56,25 @@ const Table = ({headers, data} : IHeaderProps) => {
       </TableHeaderSection>
 
       <TableBodySection>
+      {data?.map(item => (
         <TableRow>
-          {data?.map(item => (
-              <TableData key={item}>
-                {item}
+              <TableData>
+                {item.care_recipient_id}
               </TableData>
-          ))}
+              <TableData>
+                {item.event_type}
+              </TableData>
+              <TableData>
+                {item.mood?? 'N/A'}
+              </TableData>
+              <TableData>
+                {item.caregiver_id}
+              </TableData>
+              <TableData>
+                {item.timestamp}
+              </TableData>
         </TableRow>
+        ))}
       </TableBodySection>
     </TableSection>
   );
