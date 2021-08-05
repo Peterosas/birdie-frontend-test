@@ -5,14 +5,15 @@ import { Footer } from './components/Footer';
 import { MainContent } from './components/MainContent';
 
 import LoadingOverlay from 'react-loading-overlay-ts';
-import { getAllPatients } from './redux/actions/patient.actions';
+import { useAppDispatch } from './hooks';
+import { requestPatients } from './redux/actions/patient.actions';
 
  
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background: #eefcfc;
+    background: #f7f8fb;
     color: rgba(0,0,0,.65);
     font-family: Open-Sans, Helvetica, Sans-Serif;
     font-size: 14px;
@@ -41,14 +42,17 @@ const AppSection = styled.div`
 `;
 
 const App = () => {
-  const [isLoading] = useState<boolean>(true);
+  const [isLoading, setLoading] = useState<boolean>(true);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-      (async () => {
-        await getAllPatients();
-      })();
-
-  }, []);
+    (
+      async () => {
+        dispatch(await requestPatients());
+        setLoading(false);
+      }
+    )();
+  }, [dispatch]);
 
   return (
     <>
@@ -67,5 +71,6 @@ const App = () => {
     </>
   );
 }
+
 
 export default App;

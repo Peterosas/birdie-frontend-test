@@ -1,7 +1,7 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { RECEIVE_PATIENTS, REQUEST_PATIENTS } from "../types/patient.types"
 
-export const getAllPatients = async () => {
+export const requestPatients = async () => {
     let patients: string[] = [];
 
     await axios.get(process.env.REACT_APP_API_URL + '/patients')

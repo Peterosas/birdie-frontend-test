@@ -6,6 +6,7 @@ import createSagaMiddleware from 'redux-saga'
 import rootSaga from './sagas'
 import rootReducer from './reducers'
 
+
 const sagaMiddleware = createSagaMiddleware()
 
 const store = createStore(
@@ -15,5 +16,9 @@ const store = createStore(
 )
 
 sagaMiddleware.run(rootSaga)
+
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
+
 
 export default store;

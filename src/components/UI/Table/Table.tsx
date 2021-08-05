@@ -15,7 +15,7 @@ const TableHeading = styled.th`
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #87a0bb;
+  background-color: #54c6c1;
   color: #fff;
   :first-child {
     border-top-left-radius: 8px;
