@@ -13,8 +13,8 @@ const Timeline = () => {
       <VerticalTimeline>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-          contentStyle={{ background: '#00c597', color: '#fff' }}
-          contentArrowStyle={{ borderRight: '7px solid  #95f7b1' }}
+          contentStyle={{ background: '#00adb1', color: '#fff' }}
+          contentArrowStyle={{ borderRight: '7px solid  #00adb1' }}
           date="2011 - present"
         
         >
@@ -27,8 +27,8 @@ const Timeline = () => {
 
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-          contentStyle={{ background: '#95f7b1', color: '#fff' }}
-          contentArrowStyle={{ borderRight: '7px solid  #95f7b1' }}
+          contentStyle={{ background: '#00adb1', color: '#fff' }}
+          contentArrowStyle={{ borderRight: '7px solid  #00adb1' }}
           date="2011 - present"
         
         >

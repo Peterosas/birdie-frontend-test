@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, {createGlobalStyle} from 'styled-components';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { MainContent } from './components/MainContent';
+
+import LoadingOverlay from 'react-loading-overlay-ts';
 
  
 const GlobalStyle = createGlobalStyle`
@@ -13,21 +15,35 @@ const GlobalStyle = createGlobalStyle`
     color: rgba(0,0,0,.65);
     font-family: Open-Sans, Helvetica, Sans-Serif;
   }
+
+  ._loading_overlay_overlay {
+    position: fixed;
+  }
 `;
 
 
 const AppSection = styled.div`
-  background-color: transparent
+  position: relative;
+  background-color: transparent;
+  height: 100vh;
 `;
 
 const App = () => {
+  const [isLoading] = useState<boolean>(true);
+
   return (
     <>
       <GlobalStyle />
       <AppSection>
-        <Header />
-        <MainContent />
-        <Footer />
+        <LoadingOverlay
+          active={isLoading}
+          spinner
+          text='Please wait... setting up the pace!'
+        >
+          <Header />
+          <MainContent />
+          <Footer />
+        </LoadingOverlay>
       </AppSection>
     </>
   );
