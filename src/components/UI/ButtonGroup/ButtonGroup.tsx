@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const ButtonGroupSection = styled.div`
@@ -14,16 +14,23 @@ const Button = styled.button`
     padding: 10px 24px;
     text-align: center;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
 `;
 
-const ButtonGroup = () => {
+const ButtonGroup = ({ buttons, activeId } : {buttons: string[], activeId?: number}) => {
+    const [activeButtonId, setActiveButtonId] = useState<number>(activeId?? 0);
     return(
         <ButtonGroupSection>
-            <Button>Timeline</Button>
-            <Button>Graph</Button>
-            <Button>Table</Button>
+            {buttons.map((buttonLabel, i) => (
+                <Button key={i} 
+                    name={buttonLabel} 
+                    onClick={() => setActiveButtonId(i)}
+                    className={i === activeButtonId ? "active" : ""}
+                >
+                    {buttonLabel}
+                </Button>
+            ))}
         </ButtonGroupSection>
     );
 }

@@ -11,13 +11,20 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background: #f7f8fb;
+    background: rgba(88, 166, 162, 0.1);
     color: rgba(0,0,0,.65);
     font-family: Open-Sans, Helvetica, Sans-Serif;
+    font-size: 14px;
   }
 
   ._loading_overlay_overlay {
     position: fixed;
+  }
+
+  button.active {
+    background-color: #00adb1;
+    color: #fff;
+    border-radius: 4px;
   }
 `;
 
@@ -29,7 +36,7 @@ const AppSection = styled.div`
 `;
 
 const App = () => {
-  const [isLoading] = useState<boolean>(true);
+  const [isLoading] = useState<boolean>(false);
 
   return (
     <>

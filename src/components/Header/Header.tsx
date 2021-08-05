@@ -48,7 +48,7 @@ const Header = () => {
       </LogoSection>
       <SearchBox placeholder="Filter Search..." />
       <ButtonGroupSection>
-        <ButtonGroup />
+        <ButtonGroup buttons={["Timeline", "Table", "Graphical"]} />
       </ButtonGroupSection>
     </HeaderSection>
   );
