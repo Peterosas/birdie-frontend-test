@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Logo from '../../assets/images/logo.svg';
+import { ButtonGroup } from '../UI/ButtonGroup';
 
 const HeaderSection = styled.div`
   background-color: #fff;
@@ -17,8 +18,9 @@ const LogoSection = styled.div`
   flex: 2
 `;
 
-const RightPad = styled.div`
-  flex: 2
+const ButtonGroupSection = styled.div`
+  flex: 2;
+  text-align: right
 `;
 
 const SearchBox = styled.input`
@@ -45,7 +47,9 @@ const Header = () => {
         <LogoImage alt="Birdie Test" src={Logo} />
       </LogoSection>
       <SearchBox placeholder="Filter Search..." />
-      <RightPad />
+      <ButtonGroupSection>
+        <ButtonGroup />
+      </ButtonGroupSection>
     </HeaderSection>
   );
 }

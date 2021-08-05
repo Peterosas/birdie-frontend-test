@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Timeline from './Timeline';
+import ButtonGroup from './ButtonGroup';
 
-test('renders timeline', () => {
-  render(<Timeline />);
+test('renders ButtonGroup', () => {
+  render(<ButtonGroup />);
   expect(true).toBe(true);
 });
