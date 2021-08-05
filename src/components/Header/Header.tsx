@@ -52,7 +52,7 @@ const Header = () => {
       <LogoSection>
         <LogoImage alt="Birdie Test" src={Logo} />
       </LogoSection>
-      <SearchBox placeholder="Filter Search..." />
+      <SearchBox placeholder="Search for patient..." />
       <ButtonGroupSection>
         <ButtonGroup buttons={["Timeline", "Table", "Graphical"]} activeId={1} onChange={ handlePageChange } />
       </ButtonGroupSection>
